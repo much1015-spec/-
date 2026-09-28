@@ -1,18 +1,21 @@
 # 나의 혈당 관리
 
-「괜찮은 줄 알았는데」는 생활 속 선택으로 혈당 관리의 균형을 알아보는 한국어 선택형 스토리 게임입니다.
+「괜찮은 줄 알았는데」는 생활 속 선택으로 혈당 관리의 균형을 알아보는 한국어 선택형 스토리 게임입니다. 정적 웹사이트로 만들어 별도의 서버나 데이터베이스 없이 GitHub Pages에서 운영할 수 있습니다.
 
-## 실행하기
+## GitHub Pages로 공개하기
 
-`index.html`을 브라우저에서 열면 바로 실행됩니다. 빌드 도구, 백엔드, 데이터베이스가 필요하지 않습니다. GitHub Pages를 사용하려면 이 폴더의 파일을 저장소 루트에 올리고 Pages 배포 대상으로 선택하세요.
+1. 이 폴더 안의 모든 파일과 `.github` 폴더를 새 GitHub 저장소의 최상위에 올립니다. `index.html`, `app.js`, `style.css`, `README.md`와 `.github/workflows/pages.yml`이 저장소 바로 아래에 있어야 합니다.
+2. 저장소의 **Settings → Pages → Build and deployment → Source**에서 **GitHub Actions**를 선택합니다.
+3. `main` 브랜치에 파일을 올리면 Actions가 사이트를 자동 배포합니다. 저장소의 **Actions** 탭에서 `Deploy static site to GitHub Pages` 작업이 완료되면 주소를 확인할 수 있습니다. 보통 `https://<계정명>.github.io/<저장소명>/` 형식입니다.
 
-## 게임 구성
+저장소 기본 브랜치가 `main`이 아니라면 `.github/workflows/pages.yml`의 `branches` 값을 해당 브랜치 이름으로 바꾸세요.
 
-- 시작 안내와 게임 설명
-- D-Day 1, D+30일, D+1년, D+5년, D+10년의 선택 장면
-- 선택 상태에 따른 장면 피드백과 세 가지 결과
-- 마지막 “오늘의 건강 선택” 화면
-- 반응형 모바일 레이아웃, 키보드 접근성, 애니메이션
+## 구성
+
+- `index.html`: 페이지와 한국어 문서 정보
+- `style.css`: 모바일 우선 반응형 화면 디자인
+- `app.js`: 선택 상태, 이야기 장면, 교육 카드 및 엔딩
+- `.github/workflows/pages.yml`: GitHub Actions 기반 Pages 자동 배포
 
 ## 교육 안내
 
